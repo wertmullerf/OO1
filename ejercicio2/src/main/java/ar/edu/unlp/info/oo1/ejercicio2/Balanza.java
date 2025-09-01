@@ -6,15 +6,20 @@ public class Balanza {
 	private double pesoTotal;
 	
 	void ponerEnCero() {
-		
+		this.cantidadDeProductos = 0;
+		this.precioTotal= 0;
+		this.pesoTotal = 0;
 	}
 	
 	void agregarProducto(Producto producto) {
-		
+		this.pesoTotal += producto.getPeso();
+		this.precioTotal += producto.getPrecio();
+		this.cantidadDeProductos++;
 	}
 	
-	void emitirTicket() {
-		
+	Ticket emitirTicket() {
+		Ticket ticket = new Ticket(cantidadDeProductos, pesoTotal, precioTotal);
+		return ticket;
 	}
 
 	public int getCantidadDeProductos() {

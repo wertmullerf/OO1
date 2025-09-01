@@ -1,14 +1,40 @@
 package ar.edu.unlp.info.oo1.ejercicio2;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Ticket {
-	private Date fecha;
+	private LocalDate fecha;
 	private int cantidadDeProductos;
 	private double pesoTotal;
 	private double precioTotal;
 	
-	double impuesto() {
-		return precioTotal * 1.21;
+	public Ticket(int cantProductos, double pesoTotal, double precioTotal) {
+		this.fecha =  LocalDate.now();
+		this.cantidadDeProductos = cantProductos;
+		this.pesoTotal = pesoTotal;
+		this.precioTotal =precioTotal;
 	}
+	double impuesto() {
+		return precioTotal * 0.21;
+	}
+
+	public LocalDate getFecha() {
+		return fecha;
+	}
+
+	public int getCantidadDeProductos() {
+		return cantidadDeProductos;
+	}
+
+	public double getPesoTotal() {
+		return pesoTotal;
+	}
+
+	public double getPrecioTotal() {
+		return precioTotal;
+	}
+	
+	
+	
 }

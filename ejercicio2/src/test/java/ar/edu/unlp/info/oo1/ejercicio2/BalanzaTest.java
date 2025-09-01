@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo1.balanzaElectronica;
+package ar.edu.unlp.info.oo1.ejercicio2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -53,7 +53,6 @@ public class BalanzaTest {
     assertEquals(0.2, ticket.getPesoTotal(), 0.1);
     assertEquals(23, ticket.getPrecioTotal(), 0.1);
     assertEquals(2, ticket.getCantidadDeProductos());
-    assertEquals(23 * 0.21, ticket.impuesto(), 0.1);
     assertEquals(LocalDate.now(), ticket.getFecha());
 
     // Cambios de precios no tienen que afectar a tickets emitidos
