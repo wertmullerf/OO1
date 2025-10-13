@@ -1,0 +1,12 @@
+package ar.edu.unlp.info.oo1.ejercicio12;
+
+import java.util.Comparator;
+import java.util.List;
+
+public class MostEffortStrategy implements JobSelectionStrategy{
+	public JobDescription next(List<JobDescription> jobs) {
+        return jobs.stream()
+                .max(Comparator.comparingDouble(JobDescription::getEffort))
+                .orElse(null);
+	}
+}
